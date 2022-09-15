@@ -23,3 +23,6 @@ include(CTest)
 
 find_program(CLANG_TIDY_EXE NAME clang-tidy REQUIRED)
 set(CLANG_TIDY_COMMAND "${CLANG_TIDY_EXE}" "-checks=-*,modernize-*,bugprone-*")
+
+add_library(HashTable assignment3/BaseHashTable.hpp)
+set_target_properties(HashTable PROPERTIES LINKER_LANGUAGE CXX)
