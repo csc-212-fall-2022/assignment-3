@@ -1,8 +1,7 @@
 find_program(CLANG_FORMAT "clang-format")
 if(NOT CLANG_FORMAT)
-    message(FATAL_ERROR "clang-format not found on your \$\{PATH\}")
-endif()
-
+    message(WARNING "clang-format not found on your \$\{PATH\}")
+else()
 SET(EXCLUDE_PATTERN "${CMAKE_CURRENT_SOURCE_DIR}/(external|build|cmake-build-debug).*")
 
 # See https://arcanis.me/en/2015/10/17/cppcheck-and-clang-format
@@ -30,3 +29,4 @@ add_custom_target(
         COMMENT "Formatting with clang-format"
         COMMAND ${CLANG_FORMAT} -i --verbose -style=llvm ${ALL_SOURCE_FILES}
 )
+endif()

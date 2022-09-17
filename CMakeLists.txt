@@ -24,5 +24,10 @@ include(CTest)
 find_program(CLANG_TIDY_EXE NAME clang-tidy REQUIRED)
 set(CLANG_TIDY_COMMAND "${CLANG_TIDY_EXE}" "-checks=-*,modernize-*,bugprone-*")
 
-add_library(HashTable assignment3/BaseHashTable.hpp)
+add_library(HashTable assignment3/BaseHashTable.hpp assignment3/BaseHashTable.cpp assignment3/ProbingVariants.cpp assignment3/Node.hpp assignment3/ProbingVariants.hpp)
 set_target_properties(HashTable PROPERTIES LINKER_LANGUAGE CXX)
+
+add_executable(HashTableTest assignment3/ProbingVariants.test.cpp)
+target_link_libraries(HashTableTest HashTable Doctest)
+
+add_test(HashTableTest HashTableTest)
