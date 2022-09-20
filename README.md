@@ -17,8 +17,17 @@ two textbook exercises: 11.4-1 and 11.4-2.
 ## Instructions
 
 1. Complete exercise 11.4-1 on a piece of paper. You don't need to hand this in.
-2. For each open addressing strategy (linear, quadratic, double) in, copy your answer (i.e. the resulting state of the array)
-from 11.4-1 into the appropriate `indices` vector in `ProbingVariants.test.cpp` (lines 41, 48, 55).
+2. For each open addressing strategy (linear, quadratic, double) in, update the 
+appropriate `indices` vector in `ProbingVariants.test.cpp` (lines 41, 48, 55) so that `indices[j]` is the _index_
+at which `entries[j]` ends up. For example, let's say you complete the exercise and `arr_` would look like:
+```
+{ 22, 10, 31, nullptr, 4, 15, nullptr, 28, 17, 88, 59 }
+```
+Then `entries` and `indices` would look like:
+```
+entries = { 10, 22, 31, 4, 15, 28, 17, 88, 59 } // this is what we started with
+indices = {  1,  0,  2, 4,  5,  7,  8,  9, 10 } // the index of the corresponding value in arr_
+```
 3. Implement `Index` in each of `LinearProbingHashTable`, `QuadraticProbingHashTable` and `DoubleHashingHashTable`
 4. Implement `HashInsert`, `HashDelete` and `HashSearch` in `BaseHashTable.cpp`. (`HashDelete` is 11.4-2.)
 
