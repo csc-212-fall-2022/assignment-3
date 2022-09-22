@@ -16,7 +16,7 @@ two textbook exercises: 11.4-1 and 11.4-2.
 
 ## Instructions
 
-1. Complete exercise 11.4-1 on a piece of paper. You don't need to hand this in.
+1. Complete exercise 11.4-1 on a piece of paper. You don't need to hand this in. (Note: The 3rd and 4th editions of the book differ here. Repeat the exercise for linear probing, quadratic probing and double hashing.)
 2. For each open addressing strategy (linear, quadratic, double) in, update the 
 appropriate `indices` vector in `ProbingVariants.test.cpp` (lines 41, 48, 55) so that `indices[j]` is the _index_
 at which `entries[j]` ends up. For example, let's say you complete the exercise and `arr_` would look like:
