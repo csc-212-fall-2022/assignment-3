@@ -1,6 +1,7 @@
 #include "Node.hpp"
 #include <functional>
 #include <string>
+#include <vector>
 
 #ifndef ASSIGNMENT_3_BASEHASHTABLE_HPP
 #define ASSIGNMENT_3_BASEHASHTABLE_HPP
